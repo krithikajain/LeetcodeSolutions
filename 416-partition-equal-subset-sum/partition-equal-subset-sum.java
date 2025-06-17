@@ -24,11 +24,13 @@ class Solution {
         //fill the table
         for(int i=1; i<=n; i++){
             for(int j=1; j<=sum; j++){
-                //exclude
-               dp[i][j] = dp[i-1][j];
+                
                //either exclude or include
                if(nums[i-1] <= j){
-                dp[i][j] = dp[i][j] || dp[i-1][j-nums[i-1]];
+                dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i-1]];
+               } else{
+                //exclude
+               dp[i][j] = dp[i-1][j];
                }
             }
         }
