@@ -15,6 +15,8 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
+        //dfs traversal and cal the depth of left subtree and right subtree to return the maximum
+        //base condition
         if(root==null){
             return 0;
         }
